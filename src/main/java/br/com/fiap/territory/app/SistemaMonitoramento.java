@@ -1,8 +1,8 @@
 package br.com.fiap.territory.app;
 import br.com.fiap.territory.dominio.*;import br.com.fiap.territory.servico.*;
-import org.springframework.boot.*;import org.springframework.boot.autoconfigure.SpringBootApplication;import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.boot.*;import org.springframework.boot.autoconfigure.domain.EntityScan;import org.springframework.data.jpa.repository.config.EnableJpaRepositories;import org.springframework.boot.autoconfigure.SpringBootApplication;import org.springframework.context.ConfigurableApplicationContext;
 import java.util.*;import java.nio.file.Path;
-@SpringBootApplication(scanBasePackages="br.com.fiap.territory") public class SistemaMonitoramento {
+@SpringBootApplication(scanBasePackages="br.com.fiap.territory") @EntityScan("br.com.fiap.territory.dominio") @EnableJpaRepositories("br.com.fiap.territory.persistencia") public class SistemaMonitoramento {
  public static void main(String[] args){try(ConfigurableApplicationContext ctx=SpringApplication.run(SistemaMonitoramento.class,args)){executar(ctx.getBean(ServicoMonitoramento.class));}}
  static void executar(ServicoMonitoramento servico){
   Scanner entrada=new Scanner(System.in);DadosTerritorio territorio=new DadosTerritorio("Zona Norte - área simulada");
