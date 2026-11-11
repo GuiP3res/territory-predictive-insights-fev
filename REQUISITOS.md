@@ -1,0 +1,12 @@
+# Rastreabilidade dos requisitos
+- Abstração/herança: ComponenteTerritorial e EstacaoMonitoramento.
+- Interface com três sensores: Sensor e três classes concretas.
+- Encapsulamento: DadosTerritorio e validação de limiares.
+- Polimorfismo: EstrategiaPrevisao, PrevisaoMediaMovel e PrevisaoComparacao.
+- Exceções: DadosInvalidosException, FonteIndisponivelException.
+- Persistência: Medicao, Alerta, repositórios JPA e H2 em arquivo.
+- Factory: FabricaPrevisao; chamada no menu.
+- Testes: JUnit 5, assertThrows, Mockito, H2 e CSV.
+- Bônus: ExportadorCsv.
+- Menu: SistemaMonitoramento.
+- Reflexão crítica e uso de IA: README.md.

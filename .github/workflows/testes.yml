@@ -1,0 +1,19 @@
+name: Compilacao e testes Java
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v4
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Compilar e executar testes
+        run: mvn -B clean verify
